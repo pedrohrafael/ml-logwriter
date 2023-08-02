@@ -41,4 +41,4 @@ pip install -r requirements.txt
 ```
 
 ## Contribuição e Licença:
-A biblioteca ML LogWriter é de código aberto e incentivo a contribuição da comunidade para o seu aprimoramento. Ela está licenciada sob a Licença MIT, garantindo liberdade de uso e modificação para qualquer projeto, seja comercial ou não.
+A biblioteca ML LogWriter é de código aberto e é incentivada a contribuição da comunidade para o seu aprimoramento. Ela está licenciada sob a Licença MIT, garantindo liberdade de uso e modificação para qualquer projeto, seja comercial ou não.
