@@ -2,10 +2,10 @@
 
 **ML LogWriter:** Biblioteca para Registro de Logs e Armazenamento de Artefatos
 
-## Descrição:
+## Descrição
 O ML LogWriter é uma biblioteca Python de código aberto disponibilizada que visa facilitar o registro de logs de execução de código e o armazenamento de artefatos de modelos em projetos de aprendizado de máquina e experimentos de ciência de dados. Com duas classes principais, `LogWriter` e `LogArtifacts`, essa biblioteca oferece uma solução simples e eficiente para acompanhar o desempenho de modelos e registrar informações essenciais durante o desenvolvimento de projetos.
 
-## Funcionalidades:
+## Funcionalidades
 ### LogWriter:
 A classe LogWriter é responsável por registrar logs de execução em dois locais simultaneamente: em um arquivo de log e no terminal. Suas principais funcionalidades incluem:
 
@@ -20,7 +20,7 @@ A classe LogArtifacts foi desenvolvida para armazenar e organizar artefatos esse
 - **Gerenciamento de experimentos:** Organiza os resultados de experimentos em uma estrutura de diretórios clara e consistente, facilitando a localização e comparação entre diferentes iterações de modelos.
 - **Armazenamento de dados e gráficos:** Além dos modelos, a classe LogArtifacts é capaz de armazenar outros artefatos, como conjuntos de dados, gráficos de desempenho e imagens relevantes para a análise dos resultados.
 
-## Principais Benefícios:
+## Principais Benefícios
 
 - **Facilidade de Uso:** Com uma interface intuitiva, a biblioteca permite que desenvolvedores e cientistas de dados incorporem facilmente a funcionalidade de registro de logs e armazenamento de artefatos em seus projetos.
 - **Organização e Rastreabilidade:** O ML LogWriter facilita a organização de experimentos e a rastreabilidade de modelos, permitindo que os usuários acessem informações históricas e comparem resultados de forma sistemática.
