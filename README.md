@@ -18,7 +18,7 @@ Registro detalhado de eventos: Possibilita registrar informações relevantes em
 #### Exemplo de uso do módulo `LogWriter`:
 ```python
 # Importando a classe LogWriter do módulo
-from log_module import LogWriter
+from ml_logwriter.loggers import LogWriter
 
 # Criando uma instância da classe LogWriter e definindo o caminho para o arquivo de log
 log_writer = LogWriter()
@@ -46,9 +46,9 @@ A classe LogArtifacts foi desenvolvida para armazenar e organizar artefatos esse
 
 ```python
 # Importando a classe LogArtifacts do módulo
-from log_module import LogArtifacts
+from ml_logwriter.loggers import LogArtifacts
 
-# Criando uma instância da classe LogArtifacts e definindo o caminho para o diretório de artefatos
+# Criando uma instância da classe LogArtifacts e definindo o caminho para o diretório de artefatos (já existente)
 artifacts_path = 'artifacts'
 
 # Criando um novo diretório de artefatos (experimento)
@@ -101,8 +101,6 @@ Ou instale executando:
 ```python
 pip install -r requirements.txt
 ```
-
-
 
 ## Contribuição e Licença:
 A biblioteca ML LogWriter é de código aberto e é incentivada a contribuição da comunidade para o seu aprimoramento. Ela está licenciada sob a Licença MIT, garantindo liberdade de uso e modificação para qualquer projeto, seja comercial ou não.
