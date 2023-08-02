@@ -73,6 +73,7 @@ class LogArtifacts:
     log_metrics(metrics) :  Log model evaluation metrics.
     log_model(model) : Save the trained model to the artifacts directory.
     log_dataset(dataframe, name) : Save the DataFrame as a CSV file in the artifacts directory.
+    log_performance_graph(self, x_values, y_values, title, x_label, y_label, filename) : Log a performance graph and save it in the artifacts directory.
     """
     
     def __init__(self, path):
