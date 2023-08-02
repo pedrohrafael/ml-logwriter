@@ -67,8 +67,6 @@ experiment.log_model(model)
 experiment.log_dataset(dataset, 'example_dataset')
 
 # Criando um gráfico de desempenho (exemplo com valores aleatórios)
-import matplotlib.pyplot as plt
-
 x_values = [1, 2, 3, 4, 5]
 y_values = [0.9, 0.85, 0.78, 0.75, 0.72]
 experiment.log_performance_graph(x_values, y_values, title='Model Performance',
