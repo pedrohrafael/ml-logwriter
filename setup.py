@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ml_logwriter',
-    version='0.2.2',
+    version='0.2.3',
     url='https://github.com/pedrohrafael/ml-logwriter',
     license='MIT',
     description='A ML logger package',
