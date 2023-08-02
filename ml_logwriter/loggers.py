@@ -4,6 +4,7 @@ import random
 import hashlib
 import joblib
 from datetime import datetime
+import matplotlib.pyplot as plt
 import logging
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s (%(filename)s:%(lineno)d)"
@@ -66,12 +67,12 @@ class LogArtifacts:
 
     Methods
     -------
-    create(name=None):
-    load(name):
-    log_parameters(parameters):
-    log_metrics(metrics):
-    log_model(model):
-    log_dataset(dataframe, name):
+    create(name=None) : Create a new artifacts directory with the specified name or a random name.
+    load(name) : Load an existing artifacts directory.
+    log_parameters(parameters) :  Log model parameters.
+    log_metrics(metrics) :  Log model evaluation metrics.
+    log_model(model) : Save the trained model to the artifacts directory.
+    log_dataset(dataframe, name) : Save the DataFrame as a CSV file in the artifacts directory.
     """
     
     def __init__(self, path):
@@ -198,7 +199,51 @@ class LogArtifacts:
                 os.mkdir(path)
             dataframe.to_csv(os.path.join(path, name + '.csv'), index=False)
         except Exception as e:
-            sys.exit(e)            
+            sys.exit(e)
+            
+    def log_performance_graph(self, x_values, y_values, title, x_label, y_label, filename):
+        """
+        Log a performance graph and save it in the artifacts directory.
+
+        Parameters
+        ----------
+        x_values : list or array-like
+            The x-axis values for the performance graph.
+        y_values : list or array-like
+            The y-axis values for the performance graph.
+        title : str
+            Title of the performance graph.
+        x_label : str
+            Label for the x-axis.
+        y_label : str
+            Label for the y-axis.
+        filename : str
+            Filename to save the performance graph (without the file extension).
+        """
+        if not isinstance(x_values, (list, tuple)) or not isinstance(y_values, (list, tuple)):
+            raise ValueError("x_values and y_values must be lists or tuple.")
+        
+        if len(x_values) != len(y_values):
+            raise ValueError("x_values and y_values must have the same length.")
+
+        plt.figure()
+        plt.plot(x_values, y_values)
+        plt.title(title)
+        plt.xlabel(x_label)
+        plt.ylabel(y_label)
+        plt.grid(True)
+
+        directory = 'performance_graphs'
+        path = os.path.join(self.artifacts_path, directory)
+        try:
+            if not directory in os.listdir(self.artifacts_path):
+                os.mkdir(path)
+        except Exception as e:
+            sys.exit(e)
+
+        file_path = os.path.join(path, filename + '.png')
+        plt.savefig(file_path)
+        plt.close()
                        
     def _log_meta(self):
         create_date = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
